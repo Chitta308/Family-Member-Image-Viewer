@@ -1,50 +1,45 @@
 import streamlit as st
-import base64
-import os
 
-# Function to set background image
-def set_background(image_file):
-    if os.path.exists(image_file):  # Ensure file exists before opening
-        with open(image_file, "rb") as f:
-            encoded_string = base64.b64encode(f.read()).decode()
-        st.markdown(
-            f"""
-            <style>
-            .stApp {{
-                background-image: url("data:image/png;base64,{encoded_string}");
-                background-size: cover;
-            }}
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
-    else:
-        st.warning("Background image not found!")
+# Function to set background image using an online image URL
+def set_background(image_url):
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("{image_url}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
-# Set background image (change to your actual file path)
-background_path = "C:/Users/chitt/OneDrive/Pictures/Screenshots/Background.png"
-set_background(background_path)
+# Use a hosted image URL for background (Replace with your actual image URL)
+background_url = "https://your-image-hosting.com/background.png"  # Change this to your actual image link
+set_background(background_url)
 
-# Dictionary mapping names to image paths or URLs
+# Dictionary mapping names to image URLs
 person_images = {
-    "Saroj Kumar Das": "",
-    "Kuni": "",
-    "Deepak Kumar Das": "",
-    "Sanjib Das": "",
-    "Priyanka Priyadarshini Das": "",
-    "Samapika Das": "",
-    "Sasmita Das": "",
-    "Madhusudan Das": "",
-    "Chiranjib Das": "",
-    "Bhabani Sankar Das": "",
-    "Prasant Das": "",
-    "Hitanshu Sekhar Das": "",
-    "Chittaranjan Das": "C:/Users/chitt/OneDrive/Pictures/image/Pic.jpg",
-    "Subhashree Das": "",
-    "Pihu": "",
-    "Som": "",
-    "Ayush": "",
-    "Goggle": ""
+    "Saroj Kumar Das": "https://your-image-hosting.com/saroj.jpg",
+    "Kuni": "https://your-image-hosting.com/kuni.jpg",
+    "Deepak Kumar Das": "https://your-image-hosting.com/deepak.jpg",
+    "Sanjib Das": "https://your-image-hosting.com/sanjib.jpg",
+    "Priyanka Priyadarshini Das": "https://your-image-hosting.com/priyanka.jpg",
+    "Samapika Das": "https://your-image-hosting.com/samapika.jpg",
+    "Sasmita Das": "https://your-image-hosting.com/sasmita.jpg",
+    "Madhusudan Das": "https://your-image-hosting.com/madhusudan.jpg",
+    "Chiranjib Das": "https://your-image-hosting.com/chiranjib.jpg",
+    "Bhabani Sankar Das": "https://your-image-hosting.com/bhabani.jpg",
+    "Prasant Das": "https://your-image-hosting.com/prasant.jpg",
+    "Hitanshu Sekhar Das": "https://your-image-hosting.com/hitanshu.jpg",
+    "Chittaranjan Das": "https://your-image-hosting.com/chittaranjan.jpg",  # Your photo URL
+    "Subhashree Das": "https://your-image-hosting.com/subhashree.jpg",
+    "Pihu": "https://your-image-hosting.com/pihu.jpg",
+    "Som": "https://your-image-hosting.com/som.jpg",
+    "Ayush": "https://your-image-hosting.com/ayush.jpg",
+    "Goggle": "https://your-image-hosting.com/goggle.jpg"
 }
 
 st.title("Family Member Image Viewer")
@@ -53,11 +48,11 @@ st.write("Select a family member to see their image.")
 # Dropdown to select a person
 selected_person = st.selectbox("Select a person:", ["Select"] + list(person_images.keys()))
 
-# Ensure "Select" does not cause an error
+# Display the selected person's image if available
 if selected_person != "Select":
-    image_path = person_images.get(selected_person, "")
-    
-    if image_path and os.path.exists(image_path):  # Check if the image file exists
-        st.image(image_path, caption=selected_person, use_container_width=True)
+    image_url = person_images.get(selected_person, "")
+
+    if image_url:  # Ensure URL is not empty
+        st.image(image_url, caption=selected_person, use_column_width=True)
     else:
         st.warning("No image available")
