@@ -34,7 +34,7 @@ person_images = {
     "Bhabani Sankar Das": "",
     "Prasant Das": "",
     "Hitanshu Sekhar Das": "",
-    "Chittaranjan Das": "C:/Users/chitt/OneDrive/Pictures/image/Pic.jpg",
+    "Chittaranjan Das": "Pic.jpg",
     "Subhashree Das":"",
     "Pihu": "",
     "Som": "",
@@ -50,5 +50,7 @@ st.write("In this app, when a family member selects their name, their own image 
 selected_person = st.selectbox("Select a person:", ["Select"] + list(person_images.keys()))
 
 # Display the image only if a valid person is selected
-if selected_person != "Select":
+if person_images[selected_person]:
     st.image(person_images[selected_person], caption=selected_person, use_container_width=True)
+else:
+    st.warning("No image available for this person.")
