@@ -41,7 +41,7 @@ set_background(background_path)
 person_images = {
     "Saroj Kumar Das": "",
     "Kuni": "",
-    "Deepak Kumar Das": "",
+    "Deepak Kumar Das": "Papu bhai.jpg",
     "Sanjib Das": "",
     "Priyanka Priyadarshini Das": "",
     "Samapika Das": "",
@@ -54,9 +54,9 @@ person_images = {
     "Chittaranjan Das": "Pic.jpg",
     "Subhashree Das": "",
     "Pihu": "Pihu.png",
-    "Som": "",
+    "Som": "Sum.jpg",
     "Ayush": "Aush.jpg",
-    "Goggle": ""
+    "Goggle": "Google.jpg"
 }
 
 st.title("Family Member Image Viewer")
