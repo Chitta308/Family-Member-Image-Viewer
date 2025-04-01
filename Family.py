@@ -51,7 +51,7 @@ person_images = {
     "Bhabani Sankar Das": "",
     "Prasant Das": "",
     "Hitanshu Sekhar Das": "",
-    "Chittaranjan Das": "C:/Users/chitt/OneDrive/Pictures/image/Pic.jpg",
+    "Chittaranjan Das": "Pic.jpg",
     "Subhashree Das": "",
     "Pihu": "",
     "Som": "",
