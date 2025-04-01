@@ -56,7 +56,7 @@ person_images = {
     "Pihu": "Pihu.png",
     "Som": "Sum.jpg",
     "Ayush": "Aush.jpg",
-    "Goggle": "Google.jpg"
+    "Goggle": " "
 }
 
 st.title("Family Member Image Viewer")
