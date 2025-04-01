@@ -53,7 +53,7 @@ person_images = {
     "Hitanshu Sekhar Das": "",
     "Chittaranjan Das": "Pic.jpg",
     "Subhashree Das": "",
-    "Pihu": "",
+    "Pihu": "Pihu.png",
     "Som": "",
     "Ayush": "",
     "Goggle": ""
